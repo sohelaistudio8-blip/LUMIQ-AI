@@ -1,0 +1,38 @@
+:root{--bg:#F5F7FC;--sf:#fff;--sf2:#eaeefa;--tx:#10182A;--mut:#5a6685;--bl:#5685FF;--vi:#9273FF;--bd:#d5dcf0;color-scheme:light;box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#080B14;--sf:#10182A;--sf2:#18223a;--tx:#fff;--mut:#9aa7c7;--bd:#24305a;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#080B14;--sf:#10182A;--sf2:#18223a;--tx:#fff;--mut:#9aa7c7;--bd:#24305a;color-scheme:dark}
+:root[data-theme=light]{--bg:#F5F7FC;--sf:#fff;--sf2:#eaeefa;--tx:#10182A;--mut:#5a6685;--bd:#d5dcf0;color-scheme:light}
+*{box-sizing:border-box}html[data-big=on]{font-size:19px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Noto Sans Bengali",system-ui,-apple-system,"Segoe UI",sans-serif;padding-top:env(safe-area-inset-top,0px)}
+h1,h2,h3,p{margin:0 0 8px}h1{font-size:26px}h2{font-size:20px}h3{font-size:16px}
+.top{display:flex;align-items:center;gap:8px;padding:10px 14px;max-width:720px;margin:0 auto;font-weight:700;letter-spacing:.08em}.lg{width:30px;height:30px}.sp{flex:1}
+main{max-width:720px;margin:0 auto;padding:6px 14px calc(84px + env(safe-area-inset-bottom,0px))}main.nb{padding-bottom:30px}
+.bn{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:2px;background:var(--sf);border-top:1px solid var(--bd);padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px))}
+.bn button{flex:1;max-width:120px;min-height:48px;border:0;background:none;color:var(--mut);font:inherit;font-size:12px;border-radius:12px}.bn button[aria-current=page]{color:var(--bl);background:var(--sf2);font-weight:700}
+button{font:inherit;color:inherit;cursor:pointer}
+.pri{min-height:46px;padding:0 18px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--bl),var(--vi));color:#fff;font-weight:700}
+.sm,.ib{min-height:40px;min-width:40px;padding:0 12px;border:1px solid var(--bd);background:var(--sf2);border-radius:12px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-top:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.g2 .card{margin-top:12px}.n{font-size:30px;font-weight:700;color:var(--bl)}
+.mut{color:var(--mut);font-size:14px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+input,select,textarea{width:100%;background:var(--sf2);color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:10px;font:inherit;min-height:44px;margin:4px 0}
+input[type=checkbox],input[type=radio]{width:auto;min-height:0;margin-right:8px}textarea{resize:vertical}label{display:block;font-size:14px;color:var(--mut);margin-top:8px}
+.li{display:flex;gap:8px;align-items:center;padding:8px 0;border-top:1px solid var(--bd)}.li .tx{flex:1;min-width:0;overflow-wrap:anywhere}.li.dn .tx{text-decoration:line-through;color:var(--mut)}
+.bd{font-size:11px;color:var(--mut);border:1px solid var(--bd);border-radius:999px;padding:1px 8px;white-space:nowrap}
+.hero{text-align:center;padding:28px 0 8px}.hero h1{font-size:32px;background:linear-gradient(90deg,var(--bl),var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent}
+.fg{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:600px){.fg{grid-template-columns:1fr 1fr 1fr}}
+.md pre{overflow-x:auto}.md table{border-collapse:collapse}.md th,.md td{border:1px solid var(--bd);padding:4px 8px}.md a{color:var(--bl)}.md .tw{overflow-x:auto}.md .cbh button{border:0;background:none;color:var(--bl)}
+.big{font-size:44px;text-align:center;font-weight:700;margin:6px 0}.bar{display:flex;align-items:flex-end;gap:6px;height:70px}.bar i{flex:1;background:linear-gradient(var(--vi),var(--bl));border-radius:4px 4px 0 0;min-height:2px}
+.ok{color:#2fa36b}.no{color:#d9534f}
+#toast{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:40;background:var(--sf);border:1px solid var(--bl);border-radius:12px;padding:10px;font-size:14px}#toast[hidden]{display:none}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--bl);outline-offset:2px}
+html[data-calm=on] *{animation:none!important;transition:none!important}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.foot{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:24px 0 8px;color:var(--mut);font-size:13px}.foot a,main a{color:var(--bl)}
+
+/* Low-memory/mobile rendering: avoid unnecessary tap delay and isolate repeated cards. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:auto}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+.card{contain:layout style}
+@media(min-width:700px){body{padding-bottom:12px}}
